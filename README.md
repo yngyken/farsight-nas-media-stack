@@ -27,24 +27,10 @@
 
 ## 💡 如何使用
 
-1.  **下載腳本**：
-    * 將 `deploy_media_stack.sh` 腳本檔案下載到你的電腦。
-    * 使用 SSH、SFTP 或其他方式將腳本上傳到你的 NAS，建議放在 `/vol1/1000` 目錄下。
+使用這個腳本非常簡單！只需要透過 SSH 連線到你的 NAS 終端機，然後複製並貼上這條命令，按 Enter 即可。
 
-2.  **給予執行權限**：
-    * 透過 SSH 連線到你的 NAS 終端機。
-    * 導航到腳本所在的目錄，並執行以下命令：
-        ```bash
-        chmod +x deploy_media_stack.sh
-        ```
-
-3.  **執行腳本**：
-    * 以 `sudo` 權限執行腳本：
-        ```bash
-        sudo ./deploy_media_stack.sh
-        ```
-    * 腳本會引導你輸入 PUID 和 PGID，然後自動完成部署。
-
+```bash
+curl -fsSL [https://raw.githubusercontent.com/gkyang2022/farsight-nas-media-stack/main/fnserver.sh](https://raw.githubusercontent.com/gkyang2022/farsight-nas-media-stack/main/fnserver.sh) | sudo bash
 ---
 
 ## 🌐 服務訪問地址
