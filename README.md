@@ -31,6 +31,9 @@
 
 ```bash
 curl -fsSL [https://raw.githubusercontent.com/gkyang2022/farsight-nas-media-stack/main/fnserver.sh](https://raw.githubusercontent.com/gkyang2022/farsight-nas-media-stack/main/fnserver.sh) | sudo bash
+
+```
+
 ---
 
 ## 🌐 服務訪問地址
