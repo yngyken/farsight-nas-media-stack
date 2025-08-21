@@ -43,16 +43,27 @@ mkdir -p "$MEDIA_DIR/tv"
 echo "✅ 目錄建立完成！"
 
 # 互動式輸入 PUID 和 PGID，並設定默認值
-echo -e "\n--- 輸入你的使用者 ID (PUID) 和群組 ID (PGID) ---"
-echo "如果你不確定，直接按 Enter 將使用默認值 1000。"
+read -p "請輸入 PUID (默認 1000): " PUID
+# 驗證輸入，如果為空則使用默認值，否則檢查是否為數字
+if [ -z "$PUID" ]; then
+    PUID=1000
+else
+    while ! [[ "$PUID" =~ ^[0-9]+$ ]]
+    do
+      read -p "PUID 必須是數字，請重新輸入: " PUID
+    done
+fi
 
-echo -n "請輸入 PUID (默認 1000): "
-read PUID
-PUID=${PUID:-1000}
-
-echo -n "請輸入 PGID (默認 1000): "
-read PGID
-PGID=${PGID:-1000}
+read -p "請輸入 PGID (默認 1001): " PGID
+# 驗證輸入，如果為空則使用默認值，否則檢查是否為數字
+if [ -z "$PGID" ]; then
+    PGID=1001
+else
+    while ! [[ "$PGID" =~ ^[0-9]+$ ]]
+    do
+      read -p "PGID 必須是數字，請重新輸入: " PGID
+    done
+fi
 
 echo "選定的 PUID: $PUID, PGID: $PGID"
 echo "--- 開始依序建立 Docker Compose 檔案並啟動容器 ---"
