@@ -23,7 +23,7 @@ MEDIA_DIR="$BASE_DIR/media"
 # 確保腳本以 root 權限執行
 if [ "$EUID" -ne 0 ]; then
   echo "--- 錯誤：請使用 root 權限執行此腳本 ---"
-  echo "請輸入：sudo ./deploy_media_stack.sh"
+  echo "請輸入：sudo ./fnserver.sh"
   exit 1
 fi
 
@@ -45,10 +45,13 @@ echo "✅ 目錄建立完成！"
 # 互動式輸入 PUID 和 PGID，並設定默認值
 echo -e "\n--- 輸入你的使用者 ID (PUID) 和群組 ID (PGID) ---"
 echo "如果你不確定，直接按 Enter 將使用默認值 1000。"
-read -p "請輸入 PUID (默認 1000): " PUID
-read -p "請輸入 PGID (默認 1000): " PGID
 
+echo -n "請輸入 PUID (默認 1000): "
+read PUID
 PUID=${PUID:-1000}
+
+echo -n "請輸入 PGID (默認 1000): "
+read PGID
 PGID=${PGID:-1000}
 
 echo "選定的 PUID: $PUID, PGID: $PGID"
