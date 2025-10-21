@@ -107,7 +107,7 @@ version: "3.5"
 services:
   jellyfingy:
     image: nyanmisaka/jellyfin
-    container_name: jellyfin
+    container_name: jellyfingy
     user: $PUID:$PGID
     ports:
       - "8096:8096"
@@ -119,10 +119,10 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
-deploy_app "jellyfin" "$jellyfin_compose"
+deploy_app "jellyfingy" "$jellyfin_compose"
 
 # Jellyseerr 的 compose 檔案內容
 jellyseerr_compose=$(cat <<EOL
@@ -138,7 +138,7 @@ services:
     restart: "unless-stopped"
     environment:
       - LOG_LEVEL=debug
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
 deploy_app "jellyseerr" "$jellyseerr_compose"
@@ -147,9 +147,9 @@ deploy_app "jellyseerr" "$jellyseerr_compose"
 jackett_compose=$(cat <<EOL
 version: "3.5"
 services:
-  jackett1:
+  jackettgy:
     image: lscr.io/linuxserver/jackett
-    container_name: jackett
+    container_name: jackettgy
     volumes:
       - "$DOCKER_DIR/jackett/config:/config"
       - "$MEDIA_DIR/downloads:/downloads"
@@ -159,18 +159,18 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
-deploy_app "jackett" "$jackett_compose"
+deploy_app "jackettgy" "$jackett_compose"
 
 # qBittorrent 的 compose 檔案內容
 qbittorrent_compose=$(cat <<EOL
 version: "3.5"
 services:
-  qbittorrent1:
+  qbittorrentgy:
     image: lscr.io/linuxserver/qbittorrent
-    container_name: qbittorrent
+    container_name: qbittorrentgy
     volumes:
       - "$DOCKER_DIR/qbittorrent/config:/config"
       - "$MEDIA_DIR/downloads:/downloads"
@@ -183,10 +183,10 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
-deploy_app "qbittorrent" "$qbittorrent_compose"
+deploy_app "qbittorrentgy" "$qbittorrent_compose"
 
 # Sonarr 的 compose 檔案內容
 sonarr_compose=$(cat <<EOL
@@ -205,7 +205,7 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
 deploy_app "sonarr" "$sonarr_compose"
@@ -227,7 +227,7 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
 deploy_app "radarr" "$radarr_compose"
@@ -249,7 +249,7 @@ services:
     environment:
       - PUID=$PUID
       - PGID=$PGID
-      - TZ=Asia/Taipei
+      - TZ=Asia/Shanghai
 EOL
 )
 deploy_app "bazarr" "$bazarr_compose"
@@ -258,8 +258,8 @@ echo -e "\n--- 🎉 所有應用程式部署並啟動完成！ 🎉 ---"
 echo "現在你可以透過 NAS 的 IP 和對應的埠號來存取每個應用的網頁介面。"
 echo "  - Jellyfin:     http://<NAS_IP>:8096"
 echo "  - Jellyseerr:   http://<NAS_IP>:5055"
-echo "  - Jackett:      http://<NAS_IP>:9117"
-echo "  - qBittorrent:  http://<NAS_IP>:8080"
+echo "  - Jackett:      http://<NAS_IP>:9118"
+echo "  - qBittorrent:  http://<NAS_IP>:8082"
 echo "  - Sonarr:       http://<NAS_IP>:8989"
 echo "  - Radarr:       http://<NAS_IP>:7878"
 echo "  - Bazarr:       http://<NAS_IP>:6767"
