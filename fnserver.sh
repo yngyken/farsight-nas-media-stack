@@ -154,7 +154,7 @@ services:
       - "$DOCKER_DIR/jackett/config:/config"
       - "$MEDIA_DIR/downloads:/downloads"
     ports:
-      - "9117:9117"
+      - "9118:9117"
     restart: "unless-stopped"
     environment:
       - PUID=$PUID
@@ -176,9 +176,9 @@ services:
       - "$MEDIA_DIR/downloads:/downloads"
       - "$MEDIA_DIR:/media"
     ports:
-      - "6881:6881"
-      - "6881:6881/udp"
-      - "8080:8080"
+      - "6882:6881"
+      - "6882:6881/udp"
+      - "8082:8080"
     restart: "unless-stopped"
     environment:
       - PUID=$PUID
