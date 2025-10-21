@@ -105,7 +105,7 @@ deploy_app() {
 jellyfin_compose=$(cat <<EOL
 version: "3.5"
 services:
-  jellyfin:
+  jellyfingy:
     image: nyanmisaka/jellyfin
     container_name: jellyfin
     user: $PUID:$PGID
@@ -147,7 +147,7 @@ deploy_app "jellyseerr" "$jellyseerr_compose"
 jackett_compose=$(cat <<EOL
 version: "3.5"
 services:
-  jackett:
+  jackett1:
     image: lscr.io/linuxserver/jackett
     container_name: jackett
     volumes:
@@ -168,7 +168,7 @@ deploy_app "jackett" "$jackett_compose"
 qbittorrent_compose=$(cat <<EOL
 version: "3.5"
 services:
-  qbittorrent:
+  qbittorrent1:
     image: lscr.io/linuxserver/qbittorrent
     container_name: qbittorrent
     volumes:
