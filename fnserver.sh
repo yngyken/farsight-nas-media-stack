@@ -112,7 +112,7 @@ services:
     ports:
       - "8096:8096"
     volumes:
-      - "$DOCKER_DIR/jellyfin/config:/config"
+      - "$DOCKER_DIR/jellyfingy/config:/config"
       - "$MEDIA_DIR/movie:/movie"
       - "$MEDIA_DIR/tv:/tv"
     restart: "unless-stopped"
@@ -151,7 +151,7 @@ services:
     image: lscr.io/linuxserver/jackett
     container_name: jackettgy
     volumes:
-      - "$DOCKER_DIR/jackett/config:/config"
+      - "$DOCKER_DIR/jackettgy/config:/config"
       - "$MEDIA_DIR/downloads:/downloads"
     ports:
       - "9118:9117"
@@ -172,7 +172,7 @@ services:
     image: lscr.io/linuxserver/qbittorrent
     container_name: qbittorrentgy
     volumes:
-      - "$DOCKER_DIR/qbittorrent/config:/config"
+      - "$DOCKER_DIR/qbittorrentgy/config:/config"
       - "$MEDIA_DIR/downloads:/downloads"
       - "$MEDIA_DIR:/media"
     ports:
