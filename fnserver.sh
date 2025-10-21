@@ -37,7 +37,7 @@ echo "--- 正在建立所需的目錄結構 ---"
 # 建立基礎目錄
 mkdir -p "$DOCKER_DIR/jellyfin/config"
 mkdir -p "$DOCKER_DIR/jellyseerr/config"
-mkdir -p "$DOCKER_DIR/jackett/config"
+mkdir -p "$DOCKER_DIR/jackettgy/config"
 mkdir -p "$DOCKER_DIR/qbittorrent/config"
 mkdir -p "$DOCKER_DIR/sonarr/config"
 mkdir -p "$DOCKER_DIR/radarr/config"
