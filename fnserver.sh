@@ -20,7 +20,7 @@ echo "========================================="
 
 
 # 定義基礎目錄
-BASE_DIR="/vol1/1000"
+BASE_DIR="/vol1/1000/nasmedia"
 
 # 定義子目錄
 DOCKER_DIR="$BASE_DIR/docker"
