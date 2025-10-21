@@ -43,8 +43,8 @@ curl -fsSL https://raw.githubusercontent.com/yngyken/farsight-nas-media-stack/ma
 
 * **Jellyfin**: `http://<NAS_IP>:8096`
 * **Jellyseerr**: `http://<NAS_IP>:5055`
-* **Jackett**: `http://<NAS_IP>:9117`
-* **qBittorrent**: `http://<NAS_IP>:8080`
+* **Jackett**: `http://<NAS_IP>:9118`
+* **qBittorrent**: `http://<NAS_IP>:8082`
 * **Sonarr**: `http://<NAS_IP>:8989`
 * **Radarr**: `http://<NAS_IP>:7878`
 * **Bazarr**: `http://<NAS_IP>:6767`
